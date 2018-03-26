@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python33
 from data import pref_by_people
 
 
