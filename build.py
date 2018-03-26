@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-import csv
-from itertools import islice
 from data import pref_by_people
 
 

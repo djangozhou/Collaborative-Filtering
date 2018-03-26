@@ -1,5 +1,4 @@
 import csv
-import json
 from itertools import islice
 
 
