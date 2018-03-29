@@ -3,14 +3,14 @@ from itertools import islice
 
 
 movie_list = {}
-with open('/ml-latest-small/movies.csv', "r", encoding="utf-8") as f:
+with open('../ml-latest-small/movies.csv', "r", encoding="utf-8") as f:
     reader = csv.reader(f)
     for line in islice(reader, 1, None):
         (mid, title) = line[0:2]
         movie_list[mid] = title
 
 pref_by_people = {}
-with open('/ml-latest-small/ratings.csv', "r", encoding="utf-8") as f:
+with open('../ml-latest-small/ratings.csv', "r", encoding="utf-8") as f:
     reader = csv.reader(f)
     for line in islice(reader, 1, None):
         (uid, mid, rating) = line[0:3]
