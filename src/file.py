@@ -26,22 +26,26 @@ def Pearson(pref, movie1, movie2):
         return 0
     return num / den
 
-def TopMatch(pref, movie, n = 10):
-    #计算给电影和每部电影的皮尔逊相关系数
-    scores = [(Pearson(pref_by_movie, movie, mov), mov) for mov in pref_by_movie.keys() if mov != movie]
-    #根据系数进行排序，并由大到小排序
-    scores.sort(key = lambda x:x[0], reverse = True)
+
+def TopMatch(pref, movie, n=10):
+    # 计算给电影和每部电影的皮尔逊相关系数
+    scores = [(Pearson(pref_by_movie, movie, mov), mov)
+              for mov in pref_by_movie.keys() if mov != movie]
+    # 根据系数进行排序，并由大到小排序
+    scores.sort(key=lambda x: x[0], reverse=True)
     return scores[0:n]
 
-def CreateMatchList(pref = pref_by_movie):
+
+def CreateMatchList(pref=pref_by_movie):
     match_list = {}
     for movie in pref.keys():
         match_list[movie] = TopMatch(pref, movie, 10)
     return match_list
 
+
 match_list = CreateMatchList()
 
 
-f = open('temp.txt','w',encoding='utf-8')  
-f.write(str(match_list))  
+f = open('temp.txt', 'w', encoding='utf-8')
+f.write(str(match_list))
 f.close()

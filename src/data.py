@@ -18,9 +18,10 @@ with open('./ml-latest-small/ratings.csv', "r", encoding="utf-8") as f:
             pref_by_people[uid] = {}
         pref_by_people[uid][movie_list[mid]] = float(rating)
 
-f = open('people_movies.txt','w',encoding='utf-8')  
-f.write(str(pref_by_people))  
+f = open('people_movies.txt', 'w', encoding='utf-8')
+f.write(str(pref_by_people))
 f.close()
+
 
 def TransfromPref(pref):
     re_pref = {}
